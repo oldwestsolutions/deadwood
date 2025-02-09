@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/centuriesmutual/static/css/main.3229f9b3.css",
+    "main.js": "/centuriesmutual/static/js/main.051b6e21.js",
+    "index.html": "/centuriesmutual/index.html",
+    "main.3229f9b3.css.map": "/centuriesmutual/static/css/main.3229f9b3.css.map",
+    "main.051b6e21.js.map": "/centuriesmutual/static/js/main.051b6e21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3229f9b3.css",
+    "static/js/main.051b6e21.js"
+  ]
+}

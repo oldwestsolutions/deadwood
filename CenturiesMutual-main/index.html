@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <title>Centuries Mutual</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://use.typekit.net/[YOUR-KIT-CODE].css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #2c4739;
+            --forest-green-dark: #1f332a;
+            --forest-green-light: #3c5b48;
+            --cream: #F8F5F0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, .brand-text {
+            font-family: 'pt-serif-pro', serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .hero-pattern {
+            background-color: var(--forest-green);
+            background-image: linear-gradient(315deg, var(--forest-green) 0%, var(--forest-green-dark) 74%);
+        }
+        .service-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 12rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .text-primary {
+            color: var(--forest-green);
+        }
+        .bg-primary {
+            background-color: var(--forest-green);
+        }
+        .hover\:bg-primary-dark:hover {
+            background-color: var(--forest-green-dark);
+        }
+        .border-primary {
+            border-color: var(--forest-green);
+        }
+        .bg-cream {
+            background-color: var(--cream);
+        }
+        .custom-input:focus {
+            border-color: var(--forest-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(43, 81, 59, 0.2);
+        }
+        .nav-header {
+            transition: transform 0.3s ease;
+        }
+        .nav-hidden {
+            transform: translateY(-100%);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+    </style>
+    </style>
+    <script>
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('nav-hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('nav-hidden')) {
+                // Scroll down
+                header.classList.add('nav-hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('nav-hidden')) {
+                // Scroll up
+                header.classList.remove('nav-hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="nav-header bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <img src="cmlogotrans.png" alt="Centuries Mutual Logo" class="h-16 w-auto object-contain">
+                    </div>
+                    <span class="brand-text text-4xl font-bold text-primary">Centuries Mutual</span>
+                </div>
+                <div>
+                    <button onclick="window.location.href='/login'" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors">
+                        Client Portal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-white">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Secure Your Financial Future
+                    </h1>
+                    <p class="text-xl mb-8 font-light">
+                        Expert wealth management solutions tailored to your unique goals and aspirations.
+                    </p>
+                    <button onclick="window.location.href='/learn-more'" class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-cream transition-colors font-semibold">
+                        Learn More
+                    </button>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <img src="buffalohero.jpeg" alt="Wealth Management" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Broker Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="/1099-filing" class="service-card">
+                    <i class="fas fa-file-alt service-icon"></i>
+                    <h3 class="text-3xl font-semibold text-primary text-center">1040 Filing</h3>
+                </a>
+                <a href="/health-insurance" class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3 class="text-3xl font-semibold text-primary text-center">Health Insurance</h3>
+                </a>
+                <a href="/life-insurance" class="service-card">
+                    <i class="fas fa-umbrella service-icon"></i>
+                    <h3 class="text-3xl font-semibold text-primary text-center">Life Insurance</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <img src="cmdeer_1_75.jpeg" alt="About Us" class="rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 md:pl-14">
+                <h2 class="text-5xl font-extrabold mb-8 text-gray-900">About Us</h2>
+                <p class="text-gray-700 text-2xl mb-10 leading-relaxed">
+                    With over 25 years of experience in wealth management, we've helped countless clients achieve their financial goals through personalized strategies and expert guidance. Our commitment to excellence and fiduciary responsibility sets us apart in the industry.
+                </p>
+                <div class="grid grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="text-4xl font-extrabold text-primary mb-3">$2B+</h4>
+                        <p class="text-gray-700 text-xl">Assets Under Management</p>
+                    </div>
+                    <div>
+                        <h4 class="text-4xl font-extrabold text-primary mb-3">1,000+</h4>
+                        <p class="text-gray-700 text-xl">Satisfied Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="flex items-center bg-white/10 rounded-lg p-2">
+                            <img 
+                                src="cmlogotrans.png" 
+                                alt="Centuries Mutual Logo" 
+                                class="h-12 w-auto object-contain filter brightness-0 invert"
+                            >
+                        </div>
+                        <h3 class="brand-text text-3xl font-semibold">Centuries Mutual</h3>
+                    </div>
+                    <p class="text-gray-400">Your trusted partner in wealth management.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Our Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/documents" class="text-gray-400 hover:text-white transition-colors">Documents</a></li>
+                        <li><a href="/faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="/newsletter" class="text-gray-400 hover:text-white transition-colors">Newsletter</a></li>
+                        <li><a href="/careers" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>6000 Ross Perot</li>
+                        <li>Dallas, TX 75235</li>
+                        <li>+1 (888) 324-6642</li>
+                        <li>support@centuriesmutual.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Centuries Mutual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
