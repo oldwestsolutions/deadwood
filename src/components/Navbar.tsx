@@ -12,6 +12,14 @@ export default function Navbar() {
               Deadwood
             </Link>
           </div>
+          <div className="flex items-center">
+            <Link
+              href="/login"
+              className="rounded-md bg-blue-600 px-4 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
