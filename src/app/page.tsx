@@ -22,14 +22,14 @@ const categories = [
     description: "Automate deployments, manage cloud infrastructure, and streamline your CI/CD pipelines.",
     icon: WrenchScrewdriverIcon,
     href: "/categories/devops",
-    image: "/devops.jpg",
+    image: "/devops.png",
   },
   {
     name: "Networking & Security",
     description: "Level up your network configuration, security best practices, and power-user connectivity.",
     icon: ServerIcon,
     href: "/categories/networking",
-    image: "/networking.jpg",
+    image: "/networking.png",
   },
 ];
 
