@@ -2,6 +2,7 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { adminAuth } from "@/lib/firebase-admin";
 import NextAuth from "next-auth/next";
+import { authOptions } from '@/lib/auth';
 
 export const authOptions: NextAuthOptions = {
   providers: [

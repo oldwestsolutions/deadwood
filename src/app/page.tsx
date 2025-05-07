@@ -7,18 +7,13 @@ import {
   BookOpenIcon,
   CodeBracketIcon,
   VideoCameraIcon,
-  DocumentTextIcon,
   CommandLineIcon,
   ServerIcon,
   ShieldCheckIcon,
-  AcademicCapIcon,
-  RocketLaunchIcon,
   BeakerIcon,
   CpuChipIcon,
   GlobeAltIcon,
-  ChartBarIcon,
   ClockIcon,
-  StarIcon,
   CloudArrowUpIcon,
 } from '@heroicons/react/24/outline';
 
@@ -159,7 +154,7 @@ const learningPaths = [
     description: 'Deploy and maintain infrastructure',
     duration: '6 months',
     level: 'Intermediate',
-    icon: RocketLaunchIcon,
+    icon: CommandLineIcon,
   },
   {
     name: 'Full Stack Developer',
