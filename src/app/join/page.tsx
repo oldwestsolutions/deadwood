@@ -1,31 +1,72 @@
-import Link from "next/link";
+'use client';
+
+import { useState } from "react";
 
 export default function JoinPage() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    // Add your join logic here
+    setTimeout(() => setIsLoading(false), 1000);
+  };
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-900 px-4 py-24">
-      <div className="bg-slate-800 rounded-2xl shadow-2xl p-10 max-w-lg w-full text-center">
-        <h1 className="text-4xl font-extrabold text-white mb-4">Become a Member</h1>
-        <p className="text-lg text-slate-300 mb-8">
-          Join Deadwood to unlock unlimited resources, connect with top developers, and accelerate your learning journey.
-        </p>
-        {/* Placeholder for join form */}
-        <form className="flex flex-col gap-4">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="rounded-md px-4 py-3 bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            placeholder="Your name"
-            className="rounded-md px-4 py-3 bg-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="rounded-md bg-blue-600 px-5 py-3 text-lg font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            Join Now
-          </button>
+    <div className="min-h-screen flex items-center justify-center bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-slate-800 p-8 rounded-2xl shadow-2xl">
+        <div>
+          <h2 className="mt-2 text-center text-3xl font-extrabold text-white">Become a Member</h2>
+          <p className="mt-2 text-center text-sm text-slate-400">
+            Join Deadwood to unlock unlimited resources, connect with top developers, and accelerate your learning journey.
+          </p>
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-slate-700 bg-slate-800 placeholder-slate-400 text-white rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                placeholder="Email address"
+              />
+            </div>
+            <div>
+              <label htmlFor="name" className="sr-only">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autoComplete="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-slate-700 bg-slate-800 placeholder-slate-400 text-white rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                placeholder="Your name"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Joining...' : 'Join Now'}
+            </button>
+          </div>
         </form>
       </div>
     </div>
