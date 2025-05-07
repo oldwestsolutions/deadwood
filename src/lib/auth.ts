@@ -17,6 +17,10 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Email and password required");
         }
 
+        if (!adminAuth) {
+          throw new Error("Authentication service is not configured");
+        }
+
         try {
           // Sign in with Firebase
           const userCredential = await adminAuth.getUserByEmail(credentials.email);
