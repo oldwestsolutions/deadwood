@@ -7,14 +7,18 @@ interface RegisterRequest {
   name: string;
 }
 
+interface FirebaseError {
+  code: string;
+  message: string;
+}
+
 export async function POST(request: Request) {
   try {
-    const body: RegisterRequest = await request.json();
-    const { email, password, name } = body;
+    const { email, password, name } = await request.json() as RegisterRequest;
 
-    if (!name || !email || !password) {
+    if (!email || !password || !name) {
       return NextResponse.json(
-        { message: 'Missing required fields' },
+        { error: "Missing required fields" },
         { status: 400 }
       );
     }
@@ -46,20 +50,21 @@ export async function POST(request: Request) {
       },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error) {
+    const firebaseError = error as FirebaseError;
     console.error('Registration error:', error);
     
     // Handle Firebase specific errors
-    if (error.code === 'auth/email-already-in-use') {
+    if (firebaseError.code === 'auth/email-already-in-use') {
       return NextResponse.json(
-        { message: 'Email already in use' },
+        { error: 'Email already in use' },
         { status: 400 }
       );
     }
 
     return NextResponse.json(
-      { message: 'Something went wrong' },
-      { status: 500 }
+      { error: firebaseError.message || 'Failed to create user' },
+      { status: 400 }
     );
   }
 } 
