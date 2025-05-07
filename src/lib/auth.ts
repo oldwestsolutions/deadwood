@@ -5,30 +5,32 @@ import { adminAuth } from "@/lib/firebase-admin";
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "credentials",
+      name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Invalid credentials");
+          throw new Error("Email and password required");
         }
 
         try {
-          // Sign in with Firebase Admin SDK
-          const userRecord = await adminAuth.getUserByEmail(credentials.email);
+          // Sign in with Firebase
+          const userCredential = await adminAuth.getUserByEmail(credentials.email);
           
-          // Note: Firebase Admin SDK doesn't support password verification directly
-          // You'll need to implement a custom solution or use Firebase Auth REST API
-          // For now, we'll just return the user if they exist
+          if (!userCredential) {
+            throw new Error("No user found with this email");
+          }
+
           return {
-            id: userRecord.uid,
-            email: userRecord.email,
-            name: userRecord.displayName,
-            image: userRecord.photoURL,
+            id: userCredential.uid,
+            email: userCredential.email,
+            name: userCredential.displayName,
+            image: userCredential.photoURL,
           };
         } catch (error) {
+          console.error("Auth error:", error);
           throw new Error("Invalid credentials");
         }
       }
@@ -37,9 +39,23 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt"
   },
-  secret: process.env.NEXTAUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
   pages: {
     signIn: "/login",
   },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string;
+      }
+      return session;
+    }
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === "development",
 }; 
