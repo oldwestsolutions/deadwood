@@ -8,14 +8,14 @@ const categories = [
     description: "Master React, Next.js, and the latest frontend frameworks with hands-on help and real-world projects.",
     icon: CodeBracketIcon,
     href: "/categories/frontend",
-    image: "/frontend.jpg",
+    image: "/frontend.png",
   },
   {
     name: "Backend Development",
     description: "Build robust APIs, work with databases, and learn server-side programming from industry experts.",
     icon: ServerIcon,
     href: "/categories/backend",
-    image: "/backend.jpg",
+    image: "/backend.png",
   },
   {
     name: "DevOps & Infrastructure",
@@ -72,13 +72,13 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center gap-x-6">
               <Link
-                href="/ask"
+                href="/join"
                 className="rounded-md bg-blue-600 px-5 py-3 text-lg font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
-                Ask a Question
+                Become a Member
               </Link>
-              <Link href="/browse" className="text-lg font-semibold leading-6 text-white">
-                Browse Resources <span aria-hidden="true">→</span>
+              <Link href="/newsletter" className="text-lg font-semibold leading-6 text-white">
+                Newsletter <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
