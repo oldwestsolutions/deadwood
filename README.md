@@ -1,86 +1,42 @@
-# Stack Overflow Clone
+# Deadwood Software
 
-A modern Q&A platform built with Next.js, TypeScript, and PostgreSQL.
+A modern web platform for software development education, certification, and resources.
 
 ## Features
 
-- User authentication (sign up, login, logout)
-- Ask questions
-- Answer questions
-- Vote on questions and answers
-- Comment on questions and answers
-- Tag system
-- User reputation system
+- **Educational Resources**: Comprehensive learning materials and certification programs
+- **Solutions Hub**: Detailed guides for programming languages, hardware, physics, game engines, and enterprise software
+- **Shop**: T-shirts, accessories, and development gadgets
+- **Modern UI**: Built with Next.js 14, Tailwind CSS, and Framer Motion
 
 ## Tech Stack
 
-- Next.js 14 (App Router)
+- Next.js 14
 - TypeScript
 - Tailwind CSS
-- PostgreSQL
-- Prisma ORM
+- Framer Motion
+- Heroicons
 - NextAuth.js
-- bcryptjs
 
-## Prerequisites
+## Getting Started
 
-- Node.js 18+ and npm
-- PostgreSQL database
-
-## Setup
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd stackoverflow-clone
-```
-
+1. Clone the repository
 2. Install dependencies:
-```bash
-npm install
-```
-
-3. Create a `.env` file in the root directory with the following variables:
-```
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/stackoverflow_clone"
-NEXTAUTH_SECRET="your-secret-key-here"
-NEXTAUTH_URL="http://localhost:3000"
-```
-
-4. Set up the database:
-```bash
-npx prisma db push
-```
-
-5. Start the development server:
-```bash
-npm run dev
-```
-
-The application will be available at http://localhost:3000.
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
-```
-src/
-├── app/                    # App router pages
-│   ├── api/               # API routes
-│   ├── questions/         # Question-related pages
-│   ├── tags/             # Tag-related pages
-│   └── users/            # User-related pages
-├── components/            # React components
-├── lib/                   # Utility functions and configurations
-└── types/                # TypeScript type definitions
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- `/src/app`: Next.js app router pages
+- `/src/components`: Reusable UI components
+- `/public`: Static assets
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
