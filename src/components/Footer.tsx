@@ -12,18 +12,17 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
           <ul className="space-y-2">
-            <li><Link href="/docs" className="hover:underline">Documentation</Link></li>
-            <li><Link href="/examples" className="hover:underline">Code Examples</Link></li>
-            <li><Link href="/tutorials" className="hover:underline">Video Tutorials</Link></li>
-            <li><Link href="/newsletter" className="hover:underline">Newsletter</Link></li>
+            <li><Link href="/products" className="hover:underline">Products</Link></li>
+            <li><Link href="/solutions" className="hover:underline">Solutions</Link></li>
+            <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="text-lg font-bold text-white mb-4">Community</h3>
           <ul className="space-y-2">
-            <li><Link href="/forums" className="hover:underline">Forums</Link></li>
-            <li><Link href="/join" className="hover:underline">Become a Member</Link></li>
-            <li><Link href="/login" className="hover:underline">Login</Link></li>
+            <li><Link href="/support" className="hover:underline">Support Center</Link></li>
+            <li><Link href="/research" className="hover:underline">Research</Link></li>
+            <li><Link href="/shop" className="hover:underline">Shop</Link></li>
           </ul>
         </div>
         <div>

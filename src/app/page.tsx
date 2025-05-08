@@ -35,24 +35,24 @@ const categories = [
 
 const resources = [
   {
-    name: "Documentation",
-    description: "Browse our ever-growing, in-depth documentation for every major technology and tool.",
-    href: "/docs",
+    name: "Downloads",
+    description: "Browse our ever-growing, in-depth downloads for every major technology and tool.",
+    href: "/downloads",
   },
   {
-    name: "Code Examples",
+    name: "Applications",
     description: "Explore real code samples, reusable snippets, and full-stack solutions.",
-    href: "/examples",
+    href: "/applications",
   },
   {
-    name: "Video Tutorials",
+    name: "Tutorials",
     description: "Watch step-by-step video guides and master new skills visually.",
     href: "/tutorials",
   },
   {
-    name: "Community Forums",
+    name: "Community",
     description: "Join live discussions, ask questions, and network with top developers worldwide.",
-    href: "/forums",
+    href: "/community",
   },
 ];
 
@@ -148,10 +148,10 @@ export default function Home() {
                   </dt>
                   <dd className="mt-2 sm:mt-4 flex flex-auto flex-col text-base sm:text-lg leading-7 text-slate-300">
                     <p className="flex-auto">
-                      {resource.name === "Documentation" && "Browse our ever-growing, in-depth documentation for every major technology and tool."}
-                      {resource.name === "Code Examples" && "Explore real code samples, reusable snippets, and full-stack solutions."}
-                      {resource.name === "Video Tutorials" && "Watch step-by-step video guides and master new skills visually."}
-                      {resource.name === "Community Forums" && "Join live discussions, ask questions, and network with top developers worldwide."}
+                      {resource.name === "Downloads" && "Browse our ever-growing, in-depth downloads for every major technology and tool."}
+                      {resource.name === "Applications" && "Explore real code samples, reusable snippets, and full-stack solutions."}
+                      {resource.name === "Tutorials" && "Watch step-by-step video guides and master new skills visually."}
+                      {resource.name === "Community" && "Join live discussions, ask questions, and network with top developers worldwide."}
                     </p>
                     <p className="mt-4 sm:mt-6">
                       <Link href={resource.href} className="text-sm sm:text-base font-semibold leading-6 text-blue-400">
