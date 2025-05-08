@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Deadwood Help Desk',
+  title: 'Deadwood Software',
   description: 'Your comprehensive platform for development support and knowledge sharing',
 };
 
