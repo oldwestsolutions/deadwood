@@ -112,14 +112,26 @@ export default function ShopPage() {
         className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
         variants={sectionVariants}
       >
-        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-            <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Developer Shop
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Premium gear and accessories for developers. From comfortable clothing to essential gadgets, find everything you need to enhance your development experience.
-            </p>
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:px-8 lg:py-40">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                Developer Shop
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                Premium gear and accessories for developers. From comfortable clothing to essential gadgets, find everything you need to enhance your development experience.
+              </p>
+            </div>
+            <div className="lg:col-span-7 relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Developer workspace"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-transparent" />
+            </div>
           </div>
         </div>
       </motion.div>
@@ -154,14 +166,17 @@ export default function ShopPage() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t-lg bg-gray-200">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={500}
-                  height={500}
-                  className="h-full w-full object-cover object-center"
-                />
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-t-lg bg-gray-200 relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={500}
+                    height={500}
+                    className="max-h-full max-w-full object-contain"
+                    style={{ objectPosition: 'center' }}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 right-4 flex space-x-2">
                     <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
