@@ -10,7 +10,9 @@ export default function Footer() {
           <p className="text-xs text-slate-500">© {new Date().getFullYear()} Deadwood. All rights reserved.</p>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
+          <h3 className="text-lg font-bold text-white mb-4">
+            <Link href="/resources" className="hover:text-indigo-400 transition-colors">Resources</Link>
+          </h3>
           <ul className="space-y-2">
             <li><Link href="/products" className="hover:underline">Products</Link></li>
             <li><Link href="/solutions" className="hover:underline">Solutions</Link></li>
@@ -18,7 +20,9 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white mb-4">Community</h3>
+          <h3 className="text-lg font-bold text-white mb-4">
+            <Link href="/community" className="hover:text-indigo-400 transition-colors">Community</Link>
+          </h3>
           <ul className="space-y-2">
             <li><Link href="/support" className="hover:underline">Support Center</Link></li>
             <li><Link href="/research" className="hover:underline">Research</Link></li>

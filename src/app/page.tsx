@@ -1,4 +1,4 @@
-import { ArrowRightIcon, CodeBracketIcon, ServerIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, CodeBracketIcon, ServerIcon, WrenchScrewdriverIcon, BookOpenIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -45,9 +45,10 @@ const resources = [
     href: "/applications",
   },
   {
-    name: "Tutorials",
-    description: "Watch step-by-step video guides and master new skills visually.",
-    href: "/tutorials",
+    name: "Resources",
+    description: "Access comprehensive learning materials and guides.",
+    href: "/resources",
+    icon: BookOpenIcon,
   },
   {
     name: "Community",
@@ -150,7 +151,7 @@ export default function Home() {
                     <p className="flex-auto">
                       {resource.name === "Downloads" && "Browse our ever-growing, in-depth downloads for every major technology and tool."}
                       {resource.name === "Applications" && "Explore real code samples, reusable snippets, and full-stack solutions."}
-                      {resource.name === "Tutorials" && "Watch step-by-step video guides and master new skills visually."}
+                      {resource.name === "Resources" && "Access comprehensive learning materials and guides to master new skills."}
                       {resource.name === "Community" && "Join live discussions, ask questions, and network with top developers worldwide."}
                     </p>
                     <p className="mt-4 sm:mt-6">

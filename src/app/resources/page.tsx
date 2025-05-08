@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {
-  ServerIcon,
-  CloudIcon,
-  CpuChipIcon,
-  GlobeAltIcon,
-  ScaleIcon,
-  RocketLaunchIcon,
+  BookOpenIcon,
+  VideoCameraIcon,
+  CodeBracketIcon,
+  DocumentTextIcon,
+  UserGroupIcon,
+  AcademicCapIcon,
 } from '@heroicons/react/24/outline'
 
 const pageVariants = {
@@ -40,89 +40,89 @@ const sectionVariants = {
   }
 }
 
-const applications = [
+const resources = [
   {
-    name: 'Cloud Infrastructure',
-    description: 'Build and manage scalable cloud applications using AWS, Azure, and Google Cloud Platform.',
-    icon: CloudIcon,
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Interactive Tutorials',
+    description: 'Step-by-step guides with hands-on coding exercises and real-time feedback.',
+    icon: BookOpenIcon,
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'Auto-scaling capabilities',
-      'Load balancing',
-      'High availability',
-      'Disaster recovery'
+      'Interactive code editor',
+      'Progress tracking',
+      'Instant feedback',
+      'Project-based learning'
     ]
   },
   {
-    name: 'Distributed Systems',
-    description: 'Create robust distributed applications that can handle millions of concurrent users.',
-    icon: ServerIcon,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Video Courses',
+    description: 'Comprehensive video courses taught by industry experts.',
+    icon: VideoCameraIcon,
+    image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'Microservices architecture',
-      'Service mesh',
-      'Message queues',
-      'Event-driven design'
+      'HD quality videos',
+      'Downloadable resources',
+      'Course certificates',
+      'Lifetime access'
     ]
   },
   {
-    name: 'High-Performance Computing',
-    description: 'Leverage GPU and CPU clusters for complex computational tasks.',
-    icon: CpuChipIcon,
-    image: 'https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Code Examples',
+    description: 'Real-world code examples and best practices for various technologies.',
+    icon: CodeBracketIcon,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'Parallel processing',
-      'GPU acceleration',
-      'Distributed computing',
-      'Real-time analytics'
+      'Production-ready code',
+      'Multiple languages',
+      'Best practices',
+      'Performance tips'
     ]
   },
   {
-    name: 'Global Applications',
-    description: 'Build applications that serve users worldwide with minimal latency.',
-    icon: GlobeAltIcon,
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Documentation',
+    description: 'Comprehensive documentation and API references.',
+    icon: DocumentTextIcon,
+    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'CDN integration',
-      'Multi-region deployment',
-      'Edge computing',
-      'Global load balancing'
+      'API references',
+      'Integration guides',
+      'Architecture docs',
+      'Security best practices'
     ]
   },
   {
-    name: 'Scalable Databases',
-    description: 'Design and implement databases that can handle petabytes of data.',
-    icon: ScaleIcon,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Community Projects',
+    description: 'Access to community-contributed projects and examples.',
+    icon: UserGroupIcon,
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'Sharding strategies',
-      'Replication',
-      'Data partitioning',
-      'Caching layers'
+      'Open source projects',
+      'Code reviews',
+      'Collaboration tools',
+      'Project templates'
     ]
   },
   {
-    name: 'Real-time Systems',
-    description: 'Create applications that process and respond to data in real-time.',
-    icon: RocketLaunchIcon,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    name: 'Certification Paths',
+    description: 'Structured learning paths leading to industry-recognized certifications.',
+    icon: AcademicCapIcon,
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     features: [
-      'WebSocket integration',
-      'Stream processing',
-      'Real-time analytics',
-      'Event streaming'
+      'Skill assessments',
+      'Practice exams',
+      'Expert mentorship',
+      'Career guidance'
     ]
   }
 ]
 
 const stats = [
-  { id: 1, name: 'Applications Deployed', value: '1,000+' },
-  { id: 2, name: 'Data Processed Daily', value: '1PB+' },
-  { id: 3, name: 'Global Users', value: '10M+' },
-  { id: 4, name: 'Uptime', value: '99.99%' },
+  { id: 1, name: 'Learning Resources', value: '500+' },
+  { id: 2, name: 'Video Hours', value: '1,000+' },
+  { id: 3, name: 'Code Examples', value: '2,000+' },
+  { id: 4, name: 'Success Rate', value: '95%' },
 ]
 
-export default function ApplicationsPage() {
+export default function ResourcesPage() {
   return (
     <motion.div 
       className="bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800"
@@ -139,28 +139,28 @@ export default function ApplicationsPage() {
           <div className="mx-auto max-w-7xl lg:flex lg:gap-x-16">
             <div className="flex-1 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
               <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Building Applications at Scale
+                Unlimited Learning Resources
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Learn how to leverage modern computing resources to create powerful, scalable applications that can handle millions of users and petabytes of data.
+                Access comprehensive learning materials, tutorials, and resources to master software development and advance your career.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a
-                  href="#learn"
+                  href="#explore"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Start Learning
+                  Explore Resources
                 </a>
-                <a href="#explore" className="text-sm font-semibold leading-6 text-gray-300">
-                  Explore Resources <span aria-hidden="true">→</span>
+                <a href="#learn-more" className="text-sm font-semibold leading-6 text-gray-300">
+                  Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
             <div className="relative mt-16 flex-1 lg:mt-0">
               <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Large-scale application architecture"
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Learning resources"
                   fill
                   className="object-cover"
                   priority
@@ -180,7 +180,7 @@ export default function ApplicationsPage() {
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Trusted by developers worldwide
+              Comprehensive Learning Materials
             </h2>
           </div>
           <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
@@ -194,33 +194,33 @@ export default function ApplicationsPage() {
         </div>
       </motion.div>
 
-      {/* Applications Grid */}
+      {/* Resources Grid */}
       <motion.div 
         className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32"
         variants={sectionVariants}
       >
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-400">Application Types</h2>
+          <h2 className="text-base font-semibold leading-7 text-indigo-400">Learning Resources</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Building for Scale
+            Everything You Need to Succeed
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Explore different types of large-scale applications and learn how to build them effectively.
+            Access a wide range of learning materials designed to help you master software development.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {applications.map((application) => (
+            {resources.map((resource) => (
               <motion.div
-                key={application.name}
+                key={resource.name}
                 className="flex flex-col bg-gray-800/50 rounded-2xl shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
                 <div className="relative h-48 w-full">
                   <Image
-                    src={application.image}
-                    alt={application.name}
+                    src={resource.image}
+                    alt={resource.name}
                     fill
                     className="object-cover"
                   />
@@ -228,13 +228,13 @@ export default function ApplicationsPage() {
                 </div>
                 <div className="p-6">
                   <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                    <application.icon className="h-5 w-5 flex-none text-indigo-400" aria-hidden="true" />
-                    {application.name}
+                    <resource.icon className="h-5 w-5 flex-none text-indigo-400" aria-hidden="true" />
+                    {resource.name}
                   </dt>
                   <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                    <p className="flex-auto">{application.description}</p>
+                    <p className="flex-auto">{resource.description}</p>
                     <ul className="mt-4 space-y-2">
-                      {application.features.map((feature) => (
+                      {resource.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-x-2 text-sm">
                           <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
                           {feature}
@@ -259,10 +259,10 @@ export default function ApplicationsPage() {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to build at scale?
+            Start Learning Today
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-gray-300">
-            Start learning how to create powerful, scalable applications that can handle millions of users.
+            Access our comprehensive learning resources and take your development skills to the next level.
           </p>
           <div className="mt-8 flex items-center justify-center gap-x-6">
             <a
