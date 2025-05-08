@@ -37,20 +37,21 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-slate-800 p-8 rounded-2xl shadow-2xl">
-        <div>
-          <h2 className="mt-2 text-center text-3xl font-extrabold text-white">Sign in to your account</h2>
-          <p className="mt-2 text-center text-sm text-slate-400">
+    <div className="min-h-screen flex items-start justify-center bg-gradient-to-br from-blue-900 via-slate-900 to-blue-800 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full mt-12 space-y-8 bg-white/10 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-white/20 relative">
+        <div className="flex flex-col items-center">
+          <img src="/logo.png" alt="Deadwood Logo" className="w-16 h-16 mb-4 rounded-full shadow-lg border-2 border-blue-400 bg-white/30" />
+          <h2 className="text-center text-3xl font-extrabold text-white drop-shadow-lg">Sign in to your account</h2>
+          <p className="mt-2 text-center text-sm text-slate-200/80">
             Or{' '}
-            <Link href="/join" className="font-medium text-blue-400 hover:text-blue-300">
+            <Link href="/join" className="font-medium text-blue-300 hover:text-blue-200 underline">
               Become a Member
             </Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
+          <div className="rounded-xl shadow-inner bg-white/5 p-4">
+            <div className="mb-4">
               <label htmlFor="email" className="sr-only">
                 Email address
               </label>
@@ -62,7 +63,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-slate-700 bg-slate-800 placeholder-slate-400 text-white rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="block w-full px-4 py-3 rounded-lg border border-blue-400 bg-slate-900/80 placeholder-slate-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base transition"
                 placeholder="Email address"
               />
             </div>
@@ -78,7 +79,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-slate-700 bg-slate-800 placeholder-slate-400 text-white rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="block w-full px-4 py-3 rounded-lg border border-blue-400 bg-slate-900/80 placeholder-slate-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base transition"
                 placeholder="Password"
               />
             </div>
@@ -87,7 +88,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base font-semibold rounded-lg text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
               {isLoading ? 'Signing in...' : 'Sign in'}
             </button>

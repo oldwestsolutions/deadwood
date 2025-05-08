@@ -62,12 +62,23 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative isolate overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-32 items-center flex-col-reverse lg:flex-row">
+          {/* Right column: image (move to top on mobile, much larger on desktop) */}
+          <div className="w-full flex justify-center items-center mt-8 mb-4 lg:mt-0 lg:ml-16 order-1 lg:order-2">
+            <Image
+              src="/nftart.jpeg"
+              alt="NFT Art"
+              width={700}
+              height={500}
+              className="rounded-2xl shadow-2xl object-cover border-4 border-blue-500 max-w-full h-auto lg:w-[700px] lg:h-[500px] w-[90vw] h-[40vw] min-h-[220px]"
+              priority
+            />
+          </div>
           {/* Left column: text, buttons, etc. */}
-          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left">
-            <h1 className="mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left order-2 lg:order-1">
+            <h1 className="mt-8 text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white">
               Deadwood Developer Community
             </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl leading-8 text-slate-300">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-6 text-slate-300">
               Unlock unlimited resources to learn coding, data science, and analysis. Connect instantly with top developers, access powerful networking, and leverage Snap Chat-style collaboration—all in one place.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6 justify-center lg:justify-start">
@@ -82,17 +93,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {/* Right column: image */}
-          <div className="w-full flex justify-center items-center mt-8 mb-4 lg:mt-0 lg:ml-16">
-            <Image
-              src="/nftart.jpeg"
-              alt="NFT Art"
-              width={400}
-              height={270}
-              className="rounded-2xl shadow-2xl object-cover border-4 border-blue-500 max-w-full h-auto"
-              priority
-            />
-          </div>
         </div>
       </section>
 
@@ -100,25 +100,27 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="flex flex-col gap-12 sm:gap-16">
           {categories.map((category, idx) => (
-            <section key={category.name} className={`flex flex-col-reverse md:flex-row items-center bg-slate-800 rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-700 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-              {/* Left: Icon, Title, Description, Link */}
-              <div className="flex-1 p-6 sm:p-10 flex flex-col items-start justify-center text-center md:text-left">
+            <section key={category.name} className={`flex flex-col md:flex-row items-stretch bg-slate-800 rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-700 min-h-[320px] ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+              {/* Image side (half section) */}
+              <div className="relative w-full md:w-1/2 h-56 md:h-auto flex-shrink-0">
+                <Image
+                  src={category.image}
+                  alt={category.name + ' image'}
+                  fill
+                  className="object-cover w-full h-full"
+                  style={{ zIndex: 0 }}
+                />
+                {/* Gradient fade overlay (direction depends on card order) */}
+                <div className={`absolute inset-0 pointer-events-none ${idx % 2 === 1 ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-slate-800/0 via-slate-800/60 to-slate-800`}></div>
+              </div>
+              {/* Text side */}
+              <div className="flex-1 flex flex-col items-start justify-center p-6 sm:p-10 text-center md:text-left">
                 <category.icon className="h-10 w-10 sm:h-14 sm:w-14 text-blue-400 mb-4 sm:mb-6 mx-auto md:mx-0" aria-hidden="true" />
                 <h3 className="text-2xl sm:text-4xl font-extrabold text-white mb-2 sm:mb-4">{category.name}</h3>
                 <p className="text-lg sm:text-2xl text-slate-300 mb-4 sm:mb-8">{category.description}</p>
                 <Link href={category.href} className="inline-flex items-center text-blue-400 font-bold hover:underline text-lg sm:text-2xl">
                   Learn more <ArrowRightIcon className="ml-2 sm:ml-3 h-5 w-5 sm:h-7 sm:w-7" />
                 </Link>
-              </div>
-              {/* Right: Image */}
-              <div className="flex-1 flex justify-center items-center p-4 sm:p-8">
-                <Image
-                  src={category.image}
-                  alt={category.name + ' image'}
-                  width={260}
-                  height={180}
-                  className="rounded-xl shadow-lg object-cover max-w-full h-auto border-2 border-blue-500"
-                />
               </div>
             </section>
           ))}

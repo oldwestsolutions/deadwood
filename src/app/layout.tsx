@@ -20,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full bg-slate-900">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
       <body className={`${inter.className} h-full`}>
         <AuthProvider>
           <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
