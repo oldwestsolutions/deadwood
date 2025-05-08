@@ -135,38 +135,39 @@ export default function ApplicationsPage() {
         className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
         variants={sectionVariants}
       >
-        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-7xl lg:flex lg:gap-x-16">
-            <div className="flex-1 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-              <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        <div className="mx-auto max-w-7xl px-6 pb-16 pt-0 sm:pb-24 lg:px-8 lg:py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Building Applications at Scale
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
+              <p className="mt-3 text-lg leading-8 text-gray-300">
                 Learn how to leverage modern computing resources to create powerful, scalable applications that can handle millions of users and petabytes of data.
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
-                <a
-                  href="#learn"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <button
+                  type="button"
+                  className="rounded-md bg-indigo-600 px-6 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Start Learning
-                </a>
-                <a href="#explore" className="text-sm font-semibold leading-6 text-gray-300">
+                </button>
+                <button
+                  type="button"
+                  className="rounded-md bg-white/10 px-6 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
                   Explore Resources <span aria-hidden="true">→</span>
-                </a>
+                </button>
               </div>
             </div>
-            <div className="relative mt-16 flex-1 lg:mt-0">
-              <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Large-scale application architecture"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-              </div>
+            <div className="lg:col-span-7 relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Building applications at scale"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-transparent" />
             </div>
           </div>
         </div>
