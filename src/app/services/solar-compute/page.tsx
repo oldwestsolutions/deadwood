@@ -71,7 +71,7 @@ export default function SolarComputePage() {
               Solar Compute
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Green computing powered by renewable solar energy. Sustainable virtual machines 
+              Green computing powered by renewable solar energy. Sustainable GPU computing 
               with zero carbon footprint for the environmentally conscious developer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

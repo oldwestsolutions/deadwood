@@ -12,18 +12,23 @@ export default function Navbar() {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px
+      // Show navbar when at the top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Hide navbar when scrolling down (and past 100px)
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
-      } else {
-        // Scrolling up
+      }
+      // Show navbar when scrolling up
+      else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
       
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlNavbar);
+    window.addEventListener('scroll', controlNavbar, { passive: true });
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
 
@@ -49,9 +54,9 @@ export default function Navbar() {
                 <SunIcon className="h-4 w-4 mr-1" />
                 Solar Compute
               </Link>
-              <Link href="/services/virtual-machines" className="text-gray-400 hover:text-white flex items-center">
+              <Link href="/services/gpus" className="text-gray-400 hover:text-white flex items-center">
                 <ServerIcon className="h-4 w-4 mr-1" />
-                VMs
+                GPUs
               </Link>
               <Link href="/services/vpn" className="text-gray-400 hover:text-white flex items-center">
                 <ShieldCheckIcon className="h-4 w-4 mr-1" />

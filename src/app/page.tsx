@@ -12,16 +12,16 @@ const services = [
   },
   {
     name: "Solar Compute",
-    description: "Green computing powered by renewable solar energy. Sustainable virtual machines with zero carbon footprint.",
+    description: "Green computing powered by renewable solar energy. Sustainable GPU computing with zero carbon footprint.",
     icon: SunIcon,
     href: "/services/solar-compute",
     features: ["100% Solar Powered", "Carbon Neutral", "Sustainable Computing", "Green Infrastructure"],
   },
   {
-    name: "Virtual Machines",
-    description: "High-performance virtual machines for DeFi applications, smart contracts, and blockchain development.",
+    name: "GPU Leasing",
+    description: "High-performance GPU leasing for DeFi applications, smart contracts, and blockchain development.",
     icon: ServerIcon,
-    href: "/services/virtual-machines",
+    href: "/services/gpus",
     features: ["High Performance", "Blockchain Ready", "Smart Contract Support", "Scalable Infrastructure"],
   },
   {
@@ -123,7 +123,7 @@ export default function Home() {
                     </div>
                     <div className="lofi-card p-3 text-center">
                       <ServerIcon className="h-6 w-6 text-white mx-auto mb-2" />
-                      <div className="text-xs text-gray-400">VMs</div>
+                      <div className="text-xs text-gray-400">GPUs</div>
                     </div>
                   </div>
                 </div>

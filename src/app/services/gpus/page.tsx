@@ -2,24 +2,24 @@ import { ServerIcon, ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outli
 import Link from "next/link";
 
 const features = [
-  "High-performance virtual machines",
+  "High-performance GPU computing",
   "Blockchain-ready infrastructure",
   "Smart contract development support",
-  "Scalable compute resources",
+  "Scalable GPU resources",
   "Dedicated GPU instances",
   "Custom network configurations"
 ];
 
 const specs = [
   {
-    name: "CPU",
-    description: "Latest generation processors with high clock speeds",
-    details: ["Intel Xeon", "AMD EPYC", "ARM-based options"]
+    name: "GPU",
+    description: "Latest generation graphics processing units for compute-intensive tasks",
+    details: ["NVIDIA RTX 4090", "AMD Radeon RX 7900", "CUDA/OpenCL support"]
   },
   {
     name: "Memory",
-    description: "High-speed RAM for demanding applications",
-    details: ["DDR4/DDR5", "Up to 1TB", "Low latency"]
+    description: "High-speed VRAM for demanding GPU applications",
+    details: ["24GB+ VRAM", "GDDR6X", "High bandwidth"]
   },
   {
     name: "Storage",
@@ -36,18 +36,18 @@ const specs = [
 const pricing = [
   {
     name: "Development",
-    price: "$30",
+    price: "$50",
     period: "/month",
     description: "Perfect for development and testing",
-    features: ["2 vCPUs", "4GB RAM", "50GB SSD", "Basic support"],
+    features: ["1 GPU", "8GB VRAM", "50GB SSD", "Basic support"],
     popular: false
   },
   {
     name: "Production",
-    price: "$150",
+    price: "$200",
     period: "/month",
     description: "For production DeFi applications",
-    features: ["8 vCPUs", "32GB RAM", "500GB SSD", "Priority support", "99.9% SLA"],
+    features: ["2 GPUs", "24GB VRAM", "500GB SSD", "Priority support", "99.9% SLA"],
     popular: true
   },
   {
@@ -55,12 +55,12 @@ const pricing = [
     price: "Custom",
     period: "",
     description: "Custom infrastructure for large deployments",
-    features: ["Dedicated hardware", "Custom specs", "24/7 support", "SLA guarantee"],
+    features: ["Dedicated GPU clusters", "Custom specs", "24/7 support", "SLA guarantee"],
     popular: false
   }
 ];
 
-export default function VirtualMachinesPage() {
+export default function GPUsPage() {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
@@ -73,10 +73,10 @@ export default function VirtualMachinesPage() {
               </div>
             </div>
             <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6">
-              Virtual Machines
+              GPU Leasing
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              High-performance virtual machines for DeFi applications, smart contracts, 
+              High-performance GPU computing for DeFi applications, smart contracts, 
               and blockchain development. Built for the decentralized future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,7 +100,7 @@ export default function VirtualMachinesPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">DeFi-Ready Infrastructure</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Virtual machines optimized for blockchain and DeFi applications
+              GPU computing optimized for blockchain and DeFi applications
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,7 +108,7 @@ export default function VirtualMachinesPage() {
               <div key={idx} className="bg-slate-800 rounded-xl p-6 border border-slate-700">
                 <div className="flex items-center mb-4">
                   <CheckIcon className="h-6 w-6 text-purple-400 mr-3" />
-                  <h3 className="text-lg font-semibold text-white">VM Feature {idx + 1}</h3>
+                  <h3 className="text-lg font-semibold text-white">GPU Feature {idx + 1}</h3>
                 </div>
                 <p className="text-slate-300">{feature}</p>
               </div>
@@ -123,7 +123,7 @@ export default function VirtualMachinesPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">High-Performance Specs</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Enterprise-grade hardware for demanding DeFi applications
+              Enterprise-grade GPU hardware for demanding DeFi applications
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -149,7 +149,7 @@ export default function VirtualMachinesPage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">VM Pricing</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">GPU Pricing</h2>
             <p className="text-lg text-slate-300">Flexible pricing for every use case</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -186,7 +186,7 @@ export default function VirtualMachinesPage() {
                       : 'bg-slate-700 text-white hover:bg-slate-600'
                   }`}
                 >
-                  Deploy VM
+                  Deploy GPU
                 </Link>
               </div>
             ))}

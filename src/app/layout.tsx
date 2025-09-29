@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Deadwood - DeFi Compute Infrastructure',
-  description: 'Decentralized, solar-powered compute infrastructure for IPFS, virtual machines, and VPN services',
+  description: 'Decentralized, solar-powered compute infrastructure for IPFS, GPU computing, and VPN services',
 };
 
 export default function RootLayout({

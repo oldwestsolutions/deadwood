@@ -65,7 +65,7 @@ const services = [
     ]
   },
   {
-    name: "Virtual Machines",
+    name: "GPU Leasing",
     icon: ServerIcon,
     color: "purple",
     plans: [
@@ -151,11 +151,11 @@ export default function PricingPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex justify-center mb-6">
-                <div className={`bg-gradient-to-r ${
-                  service.color === 'blue' ? 'from-blue-500 to-cyan-600' :
-                  service.color === 'green' ? 'from-green-500 to-emerald-600' :
-                  service.color === 'purple' ? 'from-purple-500 to-violet-600' :
-                  'from-orange-500 to-red-600'
+                <div className={`${
+                  service.color === 'blue' ? 'bg-blue-600' :
+                  service.color === 'green' ? 'bg-green-600' :
+                  service.color === 'purple' ? 'bg-purple-600' :
+                  'bg-orange-600'
                 } p-4 rounded-2xl`}>
                   <service.icon className="h-12 w-12 text-white" />
                 </div>
@@ -164,7 +164,7 @@ export default function PricingPage() {
               <p className="text-lg text-slate-300 max-w-3xl mx-auto">
                 {service.name === 'IPFS Storage' && 'Decentralized file storage with content addressing'}
                 {service.name === 'Solar Compute' && 'Green computing powered by renewable solar energy'}
-                {service.name === 'Virtual Machines' && 'High-performance VMs for DeFi applications'}
+                {service.name === 'GPU Leasing' && 'High-performance GPU leasing for DeFi applications'}
                 {service.name === 'VPN Services' && 'Secure, private networking with decentralized infrastructure'}
               </p>
             </div>
@@ -225,7 +225,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-slate-900 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-white mb-3">What is DeFi compute infrastructure?</h3>
-              <p className="text-slate-300">Our infrastructure provides decentralized, solar-powered compute resources including IPFS storage, virtual machines, and VPN services designed specifically for DeFi applications.</p>
+              <p className="text-slate-300">Our infrastructure provides decentralized, solar-powered compute resources including IPFS storage, GPU computing, and VPN services designed specifically for DeFi applications.</p>
             </div>
             <div className="bg-slate-900 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-white mb-3">How does solar-powered computing work?</h3>
@@ -237,7 +237,7 @@ export default function PricingPage() {
             </div>
             <div className="bg-slate-900 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-white mb-3">Can I use multiple services together?</h3>
-              <p className="text-slate-300">Absolutely! Our services are designed to work together seamlessly. You can combine IPFS storage, solar compute, VMs, and VPN services for a complete DeFi infrastructure stack.</p>
+              <p className="text-slate-300">Absolutely! Our services are designed to work together seamlessly. You can combine IPFS storage, solar compute, GPUs, and VPN services for a complete DeFi infrastructure stack.</p>
             </div>
           </div>
         </div>

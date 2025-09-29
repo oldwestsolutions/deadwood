@@ -34,12 +34,12 @@ const sections = [
     ]
   },
   {
-    title: "Virtual Machines",
-    description: "High-performance VMs for DeFi applications",
+    title: "GPU Leasing",
+    description: "High-performance GPU leasing for DeFi applications",
     icon: ServerIcon,
     articles: [
-      { title: "VM Configuration", description: "Setting up your virtual machine", href: "/docs/vm-configuration" },
-      { title: "DeFi Development", description: "Building DeFi applications on our VMs", href: "/docs/defi-development" },
+      { title: "GPU Configuration", description: "Setting up your GPU computing", href: "/docs/gpu-configuration" },
+      { title: "DeFi Development", description: "Building DeFi applications on our GPUs", href: "/docs/defi-development" },
       { title: "Smart Contracts", description: "Deploying and managing smart contracts", href: "/docs/smart-contracts" },
       { title: "Scaling", description: "Scaling your applications", href: "/docs/scaling" }
     ]
@@ -75,7 +75,7 @@ export default function DocsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:py-32">
           <div className="text-center">
             <div className="flex justify-center mb-8">
-              <div className="bg-gradient-to-r from-blue-500 to-green-500 p-4 rounded-2xl">
+              <div className="bg-blue-600 p-4 rounded-2xl">
                 <BookOpenIcon className="h-16 w-16 text-white" />
               </div>
             </div>

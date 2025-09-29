@@ -21,7 +21,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/services/ipfs" className="hover:text-white flex items-center"><CloudIcon className="h-4 w-4 mr-1" />IPFS Storage</Link></li>
               <li><Link href="/services/solar-compute" className="hover:text-white flex items-center"><SunIcon className="h-4 w-4 mr-1" />Solar Compute</Link></li>
-              <li><Link href="/services/virtual-machines" className="hover:text-white flex items-center"><ServerIcon className="h-4 w-4 mr-1" />Virtual Machines</Link></li>
+              <li><Link href="/services/gpus" className="hover:text-white flex items-center"><ServerIcon className="h-4 w-4 mr-1" />GPU Leasing</Link></li>
               <li><Link href="/services/vpn" className="hover:text-white flex items-center"><ShieldCheckIcon className="h-4 w-4 mr-1" />VPN Services</Link></li>
             </ul>
           </div>
