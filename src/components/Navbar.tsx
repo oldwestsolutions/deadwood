@@ -65,10 +65,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="/pricing" className="text-gray-400 hover:text-white">
+            <Link href="/pricing" className="hidden md:block text-gray-400 hover:text-white">
               Pricing
             </Link>
-            <Link href="/docs" className="text-gray-400 hover:text-white">
+            <Link href="/docs" className="hidden md:block text-gray-400 hover:text-white">
               Docs
             </Link>
             <Link
