@@ -1,165 +1,203 @@
-import { ArrowRightIcon, CodeBracketIcon, ServerIcon, WrenchScrewdriverIcon, BookOpenIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, CloudIcon, ServerIcon, ShieldCheckIcon, BoltIcon, CpuChipIcon, GlobeAltIcon, SunIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 
-const categories = [
+const services = [
   {
-    name: "Frontend Development",
-    description: "Master React, Next.js, and the latest frontend frameworks with hands-on help and real-world projects.",
-    icon: CodeBracketIcon,
-    href: "/categories/frontend",
-    image: "/frontend.png",
+    name: "IPFS Storage",
+    description: "Decentralized file storage and content addressing with IPFS protocol. Store and retrieve data across a distributed network.",
+    icon: CloudIcon,
+    href: "/services/ipfs",
+    features: ["Distributed Storage", "Content Addressing", "Peer-to-Peer Network", "Immutable Data"],
   },
   {
-    name: "Backend Development",
-    description: "Build robust APIs, work with databases, and learn server-side programming from industry experts.",
+    name: "Solar Compute",
+    description: "Green computing powered by renewable solar energy. Sustainable virtual machines with zero carbon footprint.",
+    icon: SunIcon,
+    href: "/services/solar-compute",
+    features: ["100% Solar Powered", "Carbon Neutral", "Sustainable Computing", "Green Infrastructure"],
+  },
+  {
+    name: "Virtual Machines",
+    description: "High-performance virtual machines for DeFi applications, smart contracts, and blockchain development.",
     icon: ServerIcon,
-    href: "/categories/backend",
-    image: "/backend.png",
+    href: "/services/virtual-machines",
+    features: ["High Performance", "Blockchain Ready", "Smart Contract Support", "Scalable Infrastructure"],
   },
   {
-    name: "DevOps & Infrastructure",
-    description: "Automate deployments, manage cloud infrastructure, and streamline your CI/CD pipelines.",
-    icon: WrenchScrewdriverIcon,
-    href: "/categories/devops",
-    image: "/devopss.png",
-  },
-  {
-    name: "Networking & Security",
-    description: "Level up your network configuration, security best practices, and power-user connectivity.",
-    icon: ServerIcon,
-    href: "/categories/networking",
-    image: "/networkings.png",
+    name: "VPN Services",
+    description: "Secure, private networking with decentralized VPN infrastructure for maximum privacy and security.",
+    icon: ShieldCheckIcon,
+    href: "/services/vpn",
+    features: ["End-to-End Encryption", "No-Logs Policy", "Decentralized Nodes", "Privacy First"],
   },
 ];
 
-const resources = [
+const features = [
   {
-    name: "Downloads",
-    description: "Browse our ever-growing, in-depth downloads for every major technology and tool.",
-    href: "/downloads",
+    name: "Decentralized Infrastructure",
+    description: "Enterprise-grade distributed architecture with 99.9% uptime SLA. Built on peer-to-peer networks that eliminate single points of failure and ensure global availability.",
+    href: "/features/decentralized",
+    stats: "99.9% Uptime SLA"
   },
   {
-    name: "Applications",
-    description: "Explore real code samples, reusable snippets, and full-stack solutions.",
-    href: "/applications",
+    name: "Carbon-Neutral Computing",
+    description: "100% renewable energy infrastructure with real-time carbon tracking. Achieve net-zero emissions while maintaining enterprise performance standards.",
+    href: "/features/green-computing",
+    stats: "0kg CO₂ Emissions"
   },
   {
-    name: "Resources",
-    description: "Access comprehensive learning materials and guides.",
-    href: "/resources",
-    icon: BookOpenIcon,
+    name: "Military-Grade Security",
+    description: "End-to-end encryption with zero-knowledge architecture. SOC 2 Type II compliant infrastructure with advanced threat detection and automated security protocols.",
+    href: "/features/security",
+    stats: "SOC 2 Type II"
   },
   {
-    name: "Community",
-    description: "Join live discussions, ask questions, and network with top developers worldwide.",
-    href: "/community",
+    name: "Enterprise APIs",
+    description: "Production-ready SDKs and RESTful APIs with comprehensive documentation. Built for scale with rate limiting, monitoring, and enterprise support.",
+    href: "/features/developer-tools",
+    stats: "99.99% API Uptime"
   },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-32 items-center flex-col-reverse lg:flex-row">
-          {/* Right column: image (move to top on mobile, much larger on desktop) */}
-          <div className="w-full flex justify-center items-center mt-8 mb-4 lg:mt-0 lg:ml-16 order-1 lg:order-2">
-            <Image
-              src="/nftart.jpeg"
-              alt="NFT Art"
-              width={700}
-              height={500}
-              className="rounded-2xl shadow-2xl object-cover border-4 border-blue-500 max-w-full h-auto lg:w-[700px] lg:h-[500px] w-[90vw] h-[40vw] min-h-[220px]"
-              priority
-            />
-          </div>
-          {/* Left column: text, buttons, etc. */}
-          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left order-2 lg:order-1">
-            <h1 className="mt-8 text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-              Deadwood Developer Community
+      <section className="relative isolate overflow-hidden dark-gray-bg pt-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-32 items-center">
+          {/* Left column: text content */}
+          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+              DeFi Compute Infrastructure
             </h1>
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-6 text-slate-300">
-              Unlock unlimited resources to learn coding, data science, and analysis. Connect instantly with top developers, access powerful networking, and leverage Snap Chat-style collaboration—all in one place.
+            <p className="text-xl sm:text-2xl leading-8 text-gray-400 mb-8">
+              Decentralized, solar-powered compute infrastructure for the future of DeFi. Build on sustainable, secure, and scalable infrastructure that's truly decentralized.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6 justify-center lg:justify-start">
               <Link
-                href="/join"
-                className="rounded-md bg-blue-600 px-5 py-3 text-base sm:text-lg font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 w-full sm:w-auto text-center"
+                href="/download"
+                className="lofi-button px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center"
               >
-                Become a Member
+                Download App
               </Link>
-              <Link href="/newsletter" className="text-base sm:text-lg font-semibold leading-6 text-white w-full sm:w-auto text-center">
-                Newsletter <span aria-hidden="true">→</span>
+              <Link href="/docs" className="lofi-button-outline px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center">
+                Documentation <span aria-hidden="true">→</span>
               </Link>
+            </div>
+          </div>
+          
+          {/* Right column: software image */}
+          <div className="w-full flex justify-center items-center mt-8 lg:mt-0 lg:ml-16">
+            <div className="relative w-full max-w-2xl">
+              <div className="lofi-card p-8 bg-gray-900">
+                <div className="space-y-4">
+                  {/* Terminal-like interface */}
+                  <div className="bg-black p-4 border border-gray-700">
+                    <div className="flex items-center mb-3">
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div className="text-green-400 font-mono text-sm">
+                      <div>$ deadwood deploy --solar</div>
+                      <div className="text-gray-400">✓ Solar compute nodes: 12 active</div>
+                      <div className="text-gray-400">✓ IPFS storage: 2.4TB allocated</div>
+                      <div className="text-gray-400">✓ VPN tunnels: 8 established</div>
+                      <div className="text-gray-400">✓ Carbon footprint: 0kg CO₂</div>
+                      <div className="text-white">🚀 Infrastructure ready</div>
+                    </div>
+                  </div>
+                  
+                  {/* Network diagram */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="lofi-card p-3 text-center">
+                      <CloudIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-gray-400">IPFS</div>
+                    </div>
+                    <div className="lofi-card p-3 text-center">
+                      <SunIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-gray-400">Solar</div>
+                    </div>
+                    <div className="lofi-card p-3 text-center">
+                      <ServerIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-gray-400">VMs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Services Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="flex flex-col gap-12 sm:gap-16">
-          {categories.map((category, idx) => (
-            <section key={category.name} className={`flex flex-col md:flex-row items-stretch bg-slate-800 rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-700 min-h-[320px] ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-              {/* Image side (half section) */}
-              <div className="relative w-full md:w-1/2 h-56 md:h-auto flex-shrink-0">
-                <Image
-                  src={category.image}
-                  alt={category.name + ' image'}
-                  fill
-                  className="object-cover w-full h-full"
-                  style={{ zIndex: 0 }}
-                />
-                {/* Gradient fade overlay (direction depends on card order) */}
-                <div className={`absolute inset-0 pointer-events-none ${idx % 2 === 1 ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-slate-800/0 via-slate-800/60 to-slate-800`}></div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Our Services</h2>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            Comprehensive DeFi compute infrastructure designed for the decentralized future
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, idx) => (
+            <div key={service.name} className="lofi-card p-8 hover:border-white transition-all duration-300">
+              <div className="flex items-center mb-6">
+                <div className="lofi-card p-3 mr-4">
+                  <service.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">{service.name}</h3>
               </div>
-              {/* Text side */}
-              <div className="flex-1 flex flex-col items-start justify-center p-6 sm:p-10 text-center md:text-left">
-                <category.icon className="h-10 w-10 sm:h-14 sm:w-14 text-blue-400 mb-4 sm:mb-6 mx-auto md:mx-0" aria-hidden="true" />
-                <h3 className="text-2xl sm:text-4xl font-extrabold text-white mb-2 sm:mb-4">{category.name}</h3>
-                <p className="text-lg sm:text-2xl text-slate-300 mb-4 sm:mb-8">{category.description}</p>
-                <Link href={category.href} className="inline-flex items-center text-blue-400 font-bold hover:underline text-lg sm:text-2xl">
-                  Learn more <ArrowRightIcon className="ml-2 sm:ml-3 h-5 w-5 sm:h-7 sm:w-7" />
-                </Link>
+              <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                {service.features.map((feature, featureIdx) => (
+                  <div key={featureIdx} className="lofi-card px-3 py-2 text-sm text-gray-300">
+                    {feature}
+                  </div>
+                ))}
               </div>
-            </section>
+              <Link href={service.href} className="inline-flex items-center text-white font-semibold hover:text-gray-400">
+                Learn more <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Resources Section */}
-      <div className="bg-slate-800 py-16 sm:py-24">
+      {/* Features Section */}
+      <div className="dark-gray-bg py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-blue-400">Resources</h2>
-            <p className="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-white">
-              Unlimited Developer Resources
+          <div className="mx-auto max-w-3xl lg:text-center">
+            <h2 className="text-base font-semibold leading-7 text-white uppercase tracking-wide">Enterprise Platform</h2>
+            <p className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              Production-Ready Infrastructure
             </p>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-slate-300">
-              Access documentation, code examples, video tutorials, and community forums to accelerate your learning and connect with the best in tech.
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-8 text-gray-400">
+              Enterprise-grade DeFi infrastructure with military-grade security, carbon-neutral operations, and 99.9% uptime guarantees.
             </p>
           </div>
-          <div className="mx-auto mt-10 sm:mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:max-w-none lg:grid-cols-2">
-              {resources.map((resource) => (
-                <div key={resource.name} className="flex flex-col">
-                  <dt className="text-base sm:text-lg font-semibold leading-7 text-white">
-                    {resource.name}
-                  </dt>
-                  <dd className="mt-2 sm:mt-4 flex flex-auto flex-col text-base sm:text-lg leading-7 text-slate-300">
-                    <p className="flex-auto">
-                      {resource.name === "Downloads" && "Browse our ever-growing, in-depth downloads for every major technology and tool."}
-                      {resource.name === "Applications" && "Explore real code samples, reusable snippets, and full-stack solutions."}
-                      {resource.name === "Resources" && "Access comprehensive learning materials and guides to master new skills."}
-                      {resource.name === "Community" && "Join live discussions, ask questions, and network with top developers worldwide."}
-                    </p>
-                    <p className="mt-4 sm:mt-6">
-                      <Link href={resource.href} className="text-sm sm:text-base font-semibold leading-6 text-blue-400">
-                        Learn more <span aria-hidden="true">→</span>
+          <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none lg:grid-cols-2">
+              {features.map((feature) => (
+                <div key={feature.name} className="lofi-card p-8 hover:border-white transition-all duration-300">
+                  <div className="flex flex-col">
+                    <dt className="text-xl font-bold leading-7 text-white mb-3">
+                      {feature.name}
+                    </dt>
+                    <dd className="text-base leading-7 text-gray-400 mb-6">
+                      {feature.description}
+                    </dd>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-semibold text-white bg-gray-800 px-3 py-1">
+                        {feature.stats}
+                      </span>
+                      <Link href={feature.href} className="text-sm font-semibold text-white hover:text-gray-400 flex items-center">
+                        Learn more <span className="ml-1">→</span>
                       </Link>
-                    </p>
-                  </dd>
+                    </div>
+                  </div>
                 </div>
               ))}
             </dl>

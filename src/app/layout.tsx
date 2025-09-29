@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Deadwood Software',
-  description: 'Your comprehensive platform for development support and knowledge sharing',
+  title: 'Deadwood - DeFi Compute Infrastructure',
+  description: 'Decentralized, solar-powered compute infrastructure for IPFS, virtual machines, and VPN services',
 };
 
 export default function RootLayout({
@@ -19,13 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-slate-900">
+    <html lang="en" className="h-full bg-black">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
-      <body className={`${inter.className} h-full`}>
+      <body className={`${inter.className} h-full bg-black text-white`}>
         <AuthProvider>
-          <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+          <div className="min-h-screen bg-black">
             <Navbar />
             <main className="relative">
               {children}

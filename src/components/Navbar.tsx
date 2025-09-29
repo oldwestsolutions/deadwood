@@ -1,31 +1,74 @@
 'use client';
 
 import Link from 'next/link';
+import { CloudIcon, SunIcon, ServerIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [lastScrollY]);
+
   return (
-    <nav className="bg-slate-800/50 border-b border-slate-700">
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 transition-transform duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl font-bold text-white flex items-center">
+              <div className="lofi-card p-2 mr-2">
+                <ServerIcon className="h-6 w-6 text-white" />
+              </div>
               Deadwood
             </Link>
-            <form className="relative ml-4 hidden md:block">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="rounded-md bg-slate-700 text-white px-4 py-2 pl-10 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <span className="absolute left-3 top-2.5 text-slate-400">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              </span>
-            </form>
+            <div className="hidden md:flex ml-8 space-x-6">
+              <Link href="/services/ipfs" className="text-gray-400 hover:text-white flex items-center">
+                <CloudIcon className="h-4 w-4 mr-1" />
+                IPFS
+              </Link>
+              <Link href="/services/solar-compute" className="text-gray-400 hover:text-white flex items-center">
+                <SunIcon className="h-4 w-4 mr-1" />
+                Solar Compute
+              </Link>
+              <Link href="/services/virtual-machines" className="text-gray-400 hover:text-white flex items-center">
+                <ServerIcon className="h-4 w-4 mr-1" />
+                VMs
+              </Link>
+              <Link href="/services/vpn" className="text-gray-400 hover:text-white flex items-center">
+                <ShieldCheckIcon className="h-4 w-4 mr-1" />
+                VPN
+              </Link>
+            </div>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
+            <Link href="/pricing" className="text-gray-400 hover:text-white">
+              Pricing
+            </Link>
+            <Link href="/docs" className="text-gray-400 hover:text-white">
+              Docs
+            </Link>
             <Link
               href="/login"
-              className="rounded-md bg-blue-600 px-4 py-2 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              className="lofi-button px-4 py-2 text-base font-semibold"
             >
               Login
             </Link>
