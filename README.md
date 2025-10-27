@@ -1,42 +1,37 @@
-# Deadwood Software
+Deadwood Software
+A modern web platform for quantum computing solutions, specializing in pricing intervals for niche markets.
+Features
 
-A modern web platform for software development education, certification, and resources.
+Educational Resources: Comprehensive learning materials and certification programs on quantum computing
+Solutions Hub: Detailed guides for quantum algorithms, hardware simulations, quantum physics, optimization engines, and enterprise quantum applications
+Shop: Quantum-themed T-shirts, accessories, and computational gadgets
+Modern UI: Built with Next.js 14, Tailwind CSS, and Framer Motion
 
-## Features
+Tech Stack
 
-- **Educational Resources**: Comprehensive learning materials and certification programs
-- **Solutions Hub**: Detailed guides for programming languages, hardware, physics, game engines, and enterprise software
-- **Shop**: T-shirts, accessories, and development gadgets
-- **Modern UI**: Built with Next.js 14, Tailwind CSS, and Framer Motion
+Next.js 14
+TypeScript
+Tailwind CSS
+Framer Motion
+Heroicons
+NextAuth.js
 
-## Tech Stack
+Getting Started
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Heroicons
-- NextAuth.js
+Clone the repository
+Install dependencies:
+bashnpm install
 
-## Getting Started
+Run the development server:
+bashnpm run dev
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open http://localhost:3000 in your browser
 
-## Project Structure
+Project Structure
 
-- `/src/app`: Next.js app router pages
-- `/src/components`: Reusable UI components
-- `/public`: Static assets
+/src/app: Next.js app router pages
+/src/components: Reusable UI components
+/public: Static assets
 
-## License
-
+License
 MIT
