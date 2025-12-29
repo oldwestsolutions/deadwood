@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Deadwood - DeFi Compute Infrastructure',
-  description: 'Decentralized, solar-powered compute infrastructure for IPFS, GPU computing, and VPN services',
+  title: 'Deadwood.software - Quantum-Powered Food Supply Chain Optimization',
+  description: 'Deadwood.software applies quantum-inspired optimization to reduce waste, volatility, and cost across the entire food supply chain.',
 };
 
 export default function RootLayout({

@@ -4,12 +4,10 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-rgb: 0, 0, 0;
-  --surface-rgb: 8, 8, 8;
-  --border-rgb: 32, 32, 32;
+  --background-rgb: 10, 10, 10;
+  --surface-rgb: 23, 23, 23;
+  --border-rgb: 39, 39, 39;
   --accent-rgb: 255, 255, 255;
-  --windows-gray: 240, 240, 240;
-  --dark-gray: 32, 32, 32;
 }
 
 body {
@@ -17,50 +15,25 @@ body {
   background: rgb(var(--background-rgb));
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Lo-fi minimal styling */
-.lofi-card {
-  background: rgb(var(--surface-rgb));
-  border: 1px solid rgb(var(--border-rgb));
-  border-radius: 0;
+/* Enterprise styling - MicroStrategy inspired */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.windows-gray-card {
-  background: rgb(var(--windows-gray));
-  border: 1px solid rgb(var(--border-rgb));
-  border-radius: 0;
-  color: rgb(var(--background-rgb));
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.dark-gray-bg {
-  background: rgb(var(--dark-gray));
-}
-
-.lofi-button {
-  background: rgb(var(--accent-rgb));
-  color: rgb(var(--background-rgb));
-  border: 1px solid rgb(var(--accent-rgb));
-  border-radius: 0;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.lofi-button:hover {
-  background: transparent;
-  color: rgb(var(--accent-rgb));
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.lofi-button-outline {
-  background: transparent;
-  color: rgb(var(--accent-rgb));
-  border: 1px solid rgb(var(--accent-rgb));
-  border-radius: 0;
-  transition: all 0.2s ease;
-}
-
-.lofi-button-outline:hover {
-  background: rgb(var(--accent-rgb));
-  color: rgb(var(--background-rgb));
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid rgb(255, 255, 255);
+  outline-offset: 2px;
 }
