@@ -10,6 +10,8 @@ import {
   ShieldCheckIcon,
   ServerIcon,
   CpuChipIcon,
+  MagnifyingGlassIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
 
 const useCases = [
@@ -75,7 +77,7 @@ const useCases = [
   },
 ];
 
-const technologyFeatures = [
+const platformFeatures = [
   {
     title: "Quantum-Inspired Optimization",
     description: "Probabilistic modeling and hybrid solvers for problems classical heuristics struggle with.",
@@ -93,48 +95,42 @@ const technologyFeatures = [
   },
 ];
 
-const enterpriseFeatures = [
-  {
-    title: "Security",
-    description: "Enterprise-grade security with SOC 2 Type II compliance and advanced threat detection.",
-  },
-  {
-    title: "Scalability",
-    description: "Built for enterprise scale with proven performance across large supply chain networks.",
-  },
-  {
-    title: "Integration",
-    description: "RESTful APIs and comprehensive SDKs for seamless integration with existing systems.",
-  },
+const benefits = [
+  "Reduce data warehouse and integration cost",
+  "Enforce business definitions and security",
+  "Create an AI-ready data foundation",
+  "Accelerate data product delivery",
+  "Ensure vendor freedom",
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-950">
+      {/* Top Banner Strip */}
+      <div className="bg-black text-white py-2 text-center text-sm">
+        <span>NEW! Get a 30-day trial of Deadwood Platform Standard. </span>
+        <Link href="#contact" className="underline hover:no-underline">
+          Start now
+        </Link>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden bg-neutral-950 border-b border-neutral-800 pt-16">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-32 items-center">
+      <section className="relative isolate overflow-hidden bg-neutral-950 border-b border-neutral-800 pt-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-20 items-center">
           {/* Left column: text content */}
-          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-              Quantum-Powered Supply Chain Optimization
+          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-2xl lg:pt-8 text-white">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+              Build an <span className="text-white">AI-Ready, Trusted Data Foundation</span> for your Enterprise
             </h1>
             <p className="text-xl sm:text-2xl leading-8 text-neutral-400 mb-8">
-              Deadwood.software applies quantum-inspired optimization to reduce waste, volatility, and cost across the entire food supply chain.
+              Connect every data silo, control your business definitions, and consume trusted data in any application — without the cost and complexity of data warehouses and integration.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-x-6">
               <Link
-                href="#contact"
-                className="px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center bg-white text-neutral-950 hover:bg-neutral-200 transition-colors duration-200"
+                href="#platform"
+                className="px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center border-2 border-white text-white hover:bg-white hover:text-neutral-950 transition-colors duration-200"
               >
-                Request Demo
-              </Link>
-              <Link
-                href="#use-cases"
-                className="px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center border-2 border-neutral-600 text-white hover:border-white transition-colors duration-200"
-              >
-                Explore Use Cases <span aria-hidden="true">→</span>
+                Explore Platform
               </Link>
             </div>
           </div>
@@ -185,65 +181,169 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Platform Overview */}
-      <section className="bg-neutral-900 border-b border-neutral-800 py-24">
+      {/* Platform Section - Two Column Layout */}
+      <section id="platform" className="bg-neutral-900 border-b border-neutral-800 py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Platform Overview
+          <div className="mx-auto max-w-4xl text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+              Deadwood helps you seamlessly <span className="text-white">integrate and engage with data</span>
             </h2>
             <p className="text-xl text-neutral-400 leading-relaxed">
-              A decision engine that spans the entire food supply chain, from farm to customer. 
-              Quantum-inspired solvers are deployed where uncertainty is high, constraints interact, 
-              and classical greedy algorithms fail.
+              Our data platform delivers governed insights and AI readiness on any cloud, at unparalleled scale.
             </p>
           </div>
 
-          {/* System Diagram */}
-          <div className="mt-16">
-            <div className="bg-neutral-950 border border-neutral-800 p-12">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
-                    <span className="text-neutral-400 text-sm font-semibold">FARM</span>
+          {/* Two Column Product Boxes */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+            {/* Left Box - Optimization Platform */}
+            <div className="bg-neutral-950 border-2 border-white p-10">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 border-2 border-white flex items-center justify-center mr-4">
+                  <CpuChipIcon className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Deadwood Platform</h3>
+                  <p className="text-neutral-400 text-sm">The Universal Optimization Layer</p>
+                </div>
+              </div>
+              <p className="text-neutral-300 mb-8 leading-relaxed">
+                Deliver governed, AI-optimized access to data that scales with your enterprise—eliminating the trade-offs between flexibility, control, and speed.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Data Clarity and Connection</p>
+                    <p className="text-neutral-400 text-sm">Eliminates data chaos, ensures data integrity.</p>
                   </div>
                 </div>
-                <div className="flex justify-center">
-                  <ArrowRightIcon className="h-8 w-8 text-neutral-600 hidden md:block" />
-                </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
-                    <span className="text-neutral-400 text-sm font-semibold">PROCESSOR</span>
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Scalable, Secure, Cost-Effective</p>
+                    <p className="text-neutral-400 text-sm">Proven scalability, robust security, lower Total Cost of Ownership.</p>
                   </div>
                 </div>
-                <div className="flex justify-center">
-                  <ArrowRightIcon className="h-8 w-8 text-neutral-600 hidden md:block" />
-                </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
-                    <span className="text-neutral-400 text-sm font-semibold">DISTRIBUTOR</span>
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Accelerate AI-Ready Models</p>
+                    <p className="text-neutral-400 text-sm">Enhances data with semantic context, streamlines model creation.</p>
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
-                    <span className="text-neutral-400 text-sm font-semibold">RESTAURANT</span>
+              <Link
+                href="#platform"
+                className="inline-block px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-neutral-950 transition-colors duration-200 font-semibold"
+              >
+                Explore Platform
+              </Link>
+            </div>
+
+            {/* Right Box - Analytics Platform */}
+            <div className="bg-neutral-950 border-2 border-white p-10">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 border-2 border-white flex items-center justify-center mr-4">
+                  <ChartBarIcon className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Deadwood Analytics</h3>
+                  <p className="text-neutral-400 text-sm">The AI-Powered Enterprise Analytics Platform</p>
+                </div>
+              </div>
+              <p className="text-neutral-300 mb-8 leading-relaxed">
+                The AI+BI platform trusted to deliver intelligence everywhere, on any cloud, at enterprise scale.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">AI-Powered Insights and Flexibility</p>
+                    <p className="text-neutral-400 text-sm">Leverages AI integration for quick insights, customized dashboards, and enterprise innovation.</p>
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
-                    <span className="text-neutral-400 text-sm font-semibold">CUSTOMER</span>
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Enterprise-Grade Analytics for All</p>
+                    <p className="text-neutral-400 text-sm">Democratizes data with powerful BI tools, cloud-native architecture.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <ArrowRightIcon className="h-5 w-5 text-white mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Unified Data and Performance</p>
+                    <p className="text-neutral-400 text-sm">Streamlines data access from various sources, enhances agility and decision-making.</p>
                   </div>
                 </div>
               </div>
+              <Link
+                href="#platform"
+                className="inline-block px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-neutral-950 transition-colors duration-200 font-semibold"
+              >
+                Explore Analytics
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Benefits Section */}
+      <section className="bg-neutral-950 border-b border-neutral-800 py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-4xl text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+              Don't let your <span className="text-white">data foundation</span> limit your enterprise intelligence
+            </h2>
+            <p className="text-xl text-neutral-400 leading-relaxed">
+              Empower your organization to deliver consistent information across departments. Accelerate innovative data projects, cut costly integrations, and lower warehousing expenses. Experience seamless information flow for a smarter, more efficient enterprise.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-16">
+            {/* Left Column - Benefits List */}
+            <div className="space-y-6">
+              {benefits.map((benefit, idx) => (
+                <div key={idx} className="text-white">
+                  <p className="font-semibold text-lg">{benefit}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Center Column - Detailed Benefit */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Reduce data warehouse and integration cost
+              </h3>
+              <p className="text-neutral-400 leading-relaxed">
+                Leverage existing data infrastructure to lower cloud query expenses and Total Cost of Ownership.
+              </p>
+            </div>
+
+            {/* Right Column - Abstract Diagram Placeholder */}
+            <div className="bg-neutral-900 border border-neutral-800 p-12 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-32 h-32 mx-auto mb-4 border-2 border-neutral-700 flex items-center justify-center">
+                  <GlobeAltIcon className="h-16 w-16 text-neutral-600" />
+                </div>
+                <p className="text-neutral-500 text-sm">Enterprise Data Foundation</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="#contact"
+              className="inline-block px-10 py-4 text-lg font-semibold bg-white text-neutral-950 hover:bg-neutral-200 transition-colors duration-200"
+            >
+              Get your data foundation AI-ready with Deadwood
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
-      <section id="use-cases" className="bg-neutral-950 py-24 border-b border-neutral-800">
+      <section id="use-cases" className="bg-neutral-900 py-24 border-b border-neutral-800">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center mb-20">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
@@ -276,7 +376,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="lg:col-span-8">
-                  <div className="bg-neutral-900 border border-neutral-800 p-8">
+                  <div className="bg-neutral-950 border border-neutral-800 p-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div>
                         <h4 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-3">
@@ -315,65 +415,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Technology Section */}
-      <section id="technology" className="bg-neutral-900 py-24 border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Technology
-            </h2>
-            <p className="text-xl text-neutral-400">
-              Quantum-inspired optimization, probabilistic modeling, and hybrid solvers—the same approach used by IBM, D-Wave, and leading supply-chain vendors.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {technologyFeatures.map((feature, idx) => (
-              <div key={idx} className="bg-neutral-950 border border-neutral-800 p-8">
-                <div className="w-16 h-16 border-2 border-neutral-700 flex items-center justify-center mb-6">
-                  <feature.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-neutral-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Readiness */}
-      <section id="enterprise" className="bg-neutral-950 py-24 border-b border-neutral-800">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Enterprise Readiness
-            </h2>
-            <p className="text-xl text-neutral-400">
-              Built for enterprise operators, supply chain executives, and institutional partners.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {enterpriseFeatures.map((feature, idx) => (
-              <div key={idx} className="bg-neutral-900 border border-neutral-800 p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-neutral-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact / Demo Section */}
-      <section id="contact" className="bg-neutral-900 py-24">
+      <section id="contact" className="bg-neutral-950 py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
@@ -382,29 +425,29 @@ export default function Home() {
             <p className="text-xl text-neutral-400 mb-12">
               See how quantum-inspired optimization can transform your food supply chain operations.
             </p>
-            <div className="bg-neutral-950 border border-neutral-800 p-12">
+            <div className="bg-neutral-900 border border-neutral-800 p-12">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
                     type="text"
                     placeholder="Name"
-                    className="px-4 py-3 bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
+                    className="px-4 py-3 bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
                   />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="px-4 py-3 bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
+                    className="px-4 py-3 bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
                   />
                 </div>
                 <input
                   type="text"
                   placeholder="Company"
-                  className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
+                  className="w-full px-4 py-3 bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
                 />
                 <textarea
                   placeholder="Message"
                   rows={4}
-                  className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
+                  className="w-full px-4 py-3 bg-neutral-950 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600"
                 />
                 <button
                   type="submit"
@@ -417,9 +460,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Partner Logos Footer */}
+      <section className="bg-neutral-900 border-t border-neutral-800 py-16">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <h3 className="text-center text-xl font-semibold text-neutral-400 mb-12">
+            Trusted by the world's most innovative companies
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-12 opacity-60">
+            <div className="text-3xl font-bold text-neutral-600">SAP</div>
+            <div className="text-3xl font-bold text-neutral-600">KFC</div>
+            <div className="text-3xl font-bold text-neutral-600">eBay</div>
+            <div className="text-3xl font-bold text-neutral-600">Crate&Barrel</div>
+            <div className="text-3xl font-bold text-neutral-600">VISA</div>
+            <div className="text-3xl font-bold text-neutral-600">SONY</div>
+            <div className="text-3xl font-bold text-neutral-600">Pfizer</div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-
-
-
