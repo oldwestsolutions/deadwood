@@ -112,29 +112,74 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-950">
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden bg-neutral-950 border-b border-neutral-800">
+      <section className="relative isolate overflow-hidden bg-neutral-950 border-b border-neutral-800 pt-16">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 py-32 lg:py-40">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-tight">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 pb-16 pt-8 sm:pb-24 lg:flex lg:px-8 lg:py-32 items-center">
+          {/* Left column: text content */}
+          <div className="w-full max-w-2xl flex-shrink-0 mx-auto lg:mx-0 lg:max-w-xl lg:pt-8 text-white text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
               Quantum-Powered Supply Chain Optimization
             </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-neutral-400 mb-12 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl leading-8 text-neutral-400 mb-8">
               Deadwood.software applies quantum-inspired optimization to reduce waste, volatility, and cost across the entire food supply chain.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6 justify-center lg:justify-start">
               <Link
                 href="#contact"
-                className="px-10 py-4 text-lg font-semibold bg-white text-neutral-950 hover:bg-neutral-200 transition-colors duration-200"
+                className="px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center bg-white text-neutral-950 hover:bg-neutral-200 transition-colors duration-200"
               >
                 Request Demo
               </Link>
               <Link
                 href="#use-cases"
-                className="px-10 py-4 text-lg font-semibold border-2 border-neutral-600 text-white hover:border-white transition-colors duration-200"
+                className="px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center border-2 border-neutral-600 text-white hover:border-white transition-colors duration-200"
               >
-                Explore Use Cases
+                Explore Use Cases <span aria-hidden="true">→</span>
               </Link>
+            </div>
+          </div>
+          
+          {/* Right column: optimization interface illustration */}
+          <div className="w-full flex justify-center items-center mt-8 lg:mt-0 lg:ml-16">
+            <div className="relative w-full max-w-2xl">
+              <div className="bg-neutral-900 border border-neutral-800 p-8">
+                <div className="space-y-4">
+                  {/* Terminal-like interface */}
+                  <div className="bg-neutral-950 p-4 border border-neutral-800">
+                    <div className="flex items-center mb-3">
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div className="text-green-400 font-mono text-sm">
+                      <div>$ deadwood optimize --supply-chain</div>
+                      <div className="text-neutral-400">✓ Demand forecast: 847 SKUs analyzed</div>
+                      <div className="text-neutral-400">✓ Inventory optimization: 12 facilities</div>
+                      <div className="text-neutral-400">✓ Route optimization: 156 deliveries</div>
+                      <div className="text-neutral-400">✓ Waste reduction: 23% projected</div>
+                      <div className="text-white">🚀 Optimization complete</div>
+                    </div>
+                  </div>
+                  
+                  {/* Supply chain diagram */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-neutral-950 border border-neutral-800 p-3 text-center">
+                      <ChartBarIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-neutral-400">Forecast</div>
+                    </div>
+                    <div className="bg-neutral-950 border border-neutral-800 p-3 text-center">
+                      <CubeIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-neutral-400">Inventory</div>
+                    </div>
+                    <div className="bg-neutral-950 border border-neutral-800 p-3 text-center">
+                      <TruckIcon className="h-6 w-6 text-white mx-auto mb-2" />
+                      <div className="text-xs text-neutral-400">Logistics</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
